@@ -6,10 +6,21 @@ given_word = (response.json()[0])
 
 print(" Lets play Hangman ".center(150,'*'))
 
-hint=random.choice(given_word)+""+random.choice(given_word)
 
+while 1:                                                                      #to select toughness
+    level=input("level you want to play (e for easy and t for tough):" )
 
-for char in given_word:    #iterate
+    if level == "e":
+        hint=random.choice(given_word)+""+ random.choice(given_word)           #to take 2 hints
+    elif level == "t":
+        hint=""
+    else:
+        print("choose correct level before starting game")
+        continue
+    break
+    
+
+for char in given_word:                                                       #iterate
     if char in hint :
         print(char,end=" ")
     else :
@@ -21,7 +32,7 @@ for char in given_word:    #iterate
 
 
 
-guessed = ""+hint
+guessed = ""+hint                                                        # to store hint
 lives = 5
 while lives>0:
         guess = input(" enter a letter you gussed: ")
