@@ -1,4 +1,4 @@
-import random
+import random							# module to genrate random chars
 import requests                                              # module to take data from api
 url="https://random-word-api.herokuapp.com/word?number=1"
 response=requests.get(url)
